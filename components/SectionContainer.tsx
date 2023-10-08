@@ -1,11 +1,11 @@
-import { ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 
-interface Props {
-  children: ReactNode
-}
+interface Props extends React.HTMLAttributes<HTMLSelectElement> {}
 
-export default function SectionContainer({ children }: Props) {
+export default function SectionContainer({ children, ...sectionProps }: Props) {
   return (
-    <section className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">{children}</section>
+    <section className="mx-auto px-6" {...sectionProps}>
+      {children}
+    </section>
   )
 }

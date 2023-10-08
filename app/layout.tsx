@@ -76,11 +76,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-white text-black antialiased dark:bg-gray-950 dark:text-white">
         <ThemeProviders>
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
+          <div className="fixed inset-0 -z-50 translate-y-[100px]">
+            <div className="relative bg-dot-pattern h-full opacity-50 bg-[2.2rem_2.2rem] bg-[length:2.5rem_2.5rem]" />
+            <div className="absolute bg-gradient-to-b from-black to-transparent w-full top-0 h-1/2"></div>
+          </div>
+
           <SectionContainer>
             <div className="flex h-screen flex-col justify-between font-sans">
               <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
                 <Header />
-                <main className="mb-auto">{children}</main>
+                <main className="mb-auto px-6 pt-[70px]">{children}</main>
               </SearchProvider>
               <Footer />
             </div>

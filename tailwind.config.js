@@ -15,6 +15,9 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      backgroundImage: {
+        'dot-pattern': 'radial-gradient(red 0.1rem, transparent 0px)',
+      },
       lineHeight: {
         11: '2.75rem',
         12: '3rem',
@@ -25,7 +28,10 @@ module.exports = {
         sans: ['var(--font-space-grotesk)', ...fontFamily.sans],
       },
       colors: {
-        primary: colors.pink,
+        primary: {
+          ...colors.pink,
+          DEFAULT: '#dd0033',
+        },
         gray: colors.gray,
       },
       typography: ({ theme }) => ({
